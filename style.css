@@ -1,0 +1,609 @@
+html {
+    height: 100%;
+    width: 100%;
+    min-width: 1100px;
+  }
+  body {
+    margin: 0 0;
+    font-family: "Roboto", arial, sans-serif;
+    font-size: small;
+    height: 100vh;
+  }
+  
+  .webpage {
+    position: relative;
+  
+    min-height: 600px;
+  }
+  
+  /* The blockimg and sign in button need to stretch until a certain length
+  So the logo and the search bar may need an absolute positioning */
+  .scrollheader {
+    padding-top: 20px;
+    position: relative;
+  }
+  
+  .logolink {
+    cursor: pointer;
+  }
+  
+  .logoimg {
+    width: 92px;
+    height: 30px;
+    vertical-align: middle;
+    padding: 4px 28px 0 30px;
+  }
+  
+  .sbarcontainer {
+    display: inline-block;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    box-shadow: none;
+    width: 630px;
+    height: 44px;
+  }
+  
+  .sbarcontainer:hover {
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    border-color: rbga(223, 225, 229, 0);
+  }
+  
+  .sbarwrap {
+    display: inline-block;
+    padding: 5px 4px 0 20px;
+  }
+  
+  .microphone {
+    display: inline-block;
+    height: 44px;
+    width: 40px;
+    line-height: 44px;
+    vertical-align: top;
+    margin-top: -5px;
+    text-align: center;
+  }
+  .microphone:hover {
+    cursor: pointer;
+  }
+  
+  .microphoneimg {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    background-image: url("http://www.gstatic.com/images/branding/googlemic/2x/googlemic_color_24dp.png");
+    background-size: 100% 100%;
+  }
+  
+  .microphoneimg .microtooltip {
+    visibility: hidden;
+    width: 105px;
+    background-color: black;
+    color: #fff;
+    font-weight: bold;
+    font-family: arial, sans-serif;
+    font-size: 11px;
+    text-align: center;
+    padding: 5px 0;
+    line-height: 20px;
+    border: 1px solid white;
+    /* Position the tooltip text */
+  
+    position: absolute;
+    z-index: 1;
+    margin-top: 16px;
+    top: 100%;
+    left: 79%;
+    margin-left: -60px;
+  
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  /* Tooltip arrow */
+  .microphoneimg .microtooltip::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .microphoneimg:hover .microtooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .magglass {
+    display: inline-block;
+    width: 31px;
+    height: 44px;
+    line-height: 44px;
+    margin-top: -5px;
+  }
+  .magglass:hover {
+    cursor: pointer;
+  }
+  
+  .magimg {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+  }
+  
+  .searchbar {
+    display: inline-block;
+    outline: none;
+    width: 522px;
+    height: 34px;
+  
+    border: none;
+    padding: 0;
+  
+    font: 16px arial, sans-serif;
+  }
+  
+  .scrollheaderbut {
+    display: inline-block;
+    position: absolute;
+    height: 30px;
+    right: 0;
+    padding: 0 30px 0 30px;
+    bottom: 15%;
+  }
+  
+  .gapps {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+    background-image: url("//ssl.gstatic.com/gb/images/i1_1967ca6a.png");
+    background-position: -132px -38px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    opacity: 0.55;
+    vertical-align: middle;
+  }
+  
+  .gapps:hover {
+    opacity: 1;
+  }
+  
+  .signin {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    vertical-align: middle;
+    border: 1px solid #4285f4;
+    background: -webkit-linear-gradient(top, #4387fd, #4683ea);
+    border-radius: 02px;
+    color: #fff;
+    outline: none;
+    padding: 0 12px;
+    line-height: 28px;
+    cursor: default;
+    margin-left: 15px;
+  }
+  
+  .signin:active {
+    box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.15);
+    background: -webkit-linear-gradient(top, #3c7ae4, #3f76d3);
+  }
+  
+  .headerlinks {
+    position: relative;
+    height: 58px;
+    line-height: 58px;
+    border-bottom: 1px solid #ebebeb;
+  }
+  
+  /*The links themselves should be boxes placed ontop of the border whose bottom turns blue on focus*/
+  /*May have to use absolute positioning and padding on the links, not the containers*/
+  .headergroup1 {
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    margin-left: 154px;
+    line-height: 1.5;
+    vertical-align: middle;
+  }
+  
+  .headergroup2 {
+    display: inline-block;
+    margin-left: 70px;
+    line-height: 1.5;
+    vertical-align: middle;
+    position: relative;
+    top: 10px;
+  }
+  
+  .hglinks {
+    display: inline-block;
+    text-decoration: none;
+    color: #777;
+    font-size: 13px;
+  }
+  
+  .hgl {
+    border-bottom: 3px solid blue;
+    color: blue;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+  }
+  
+  .hgl2 {
+    padding-top: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+  }
+  
+  .hgl2:hover {
+    color: black;
+  }
+  
+  .thover {
+    display: inline-block;
+    padding: 4px 19px;
+    border: 1px solid transparent;
+  }
+  
+  .thover:hover {
+    border: 1px solid #c6c6c6;
+    background-color: #f8f8f8;
+    background-image: -webki-linear-gradient(top, #f8f8f8, #f1f1f1);
+  }
+  
+  .content {
+    margin-left: 165px;
+    width: 632px;
+    padding-bottom: 75px;
+  }
+  
+  .footer {
+    position: absolute;
+    bottom: 0;
+    line-height: 40px;
+    width: 100%;
+    min-width: 1100px;
+    background-color: #f2f2f2;
+    border-top: 1px solid #e4e4e4;
+  }
+  
+  .top-info {
+    margin-left: 130px;
+    padding-left: 27px;
+    line-height: 15px;
+  }
+  
+  .top-info span {
+    font-family: "Roboto", arial, sans-serif;
+    font-size: small;
+    color: #5f6368;
+  }
+  
+  .top-info a {
+    font-family: "Roboto", arial, sans-serif;
+    font-size: small;
+    color: #5f6368;
+    text-decoration: none;
+  }
+  
+  .top-info a:hover {
+    color: #333;
+  }
+  
+  .bot-info {
+    margin-left: 130px;
+    line-height: 40px;
+  }
+  
+  .gray-circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #9e9e9e;
+    border-radius: 100%;
+  }
+  
+  .bot-info a {
+    font-family: "Roboto", arial, sans-serif;
+    font-size: small;
+    color: #5f6368;
+    text-decoration: none;
+    padding-left: 27px;
+  }
+  
+  .bot-info a:hover {
+    color: #333;
+  }
+  
+  h2 {
+    margin: 0;
+    color: #1a0dab;
+    font-size: 18px;
+    font-weight: normal;
+    font-family: arial, sans-serif;
+  }
+  
+  .searchlinks {
+    text-decoration: none;
+  }
+  .searchstats {
+    height: 43px;
+    line-height: 43px;
+    color: #777;
+  }
+  .searchlinks span {
+    color: #006621;
+    font-style: normal;
+  }
+  
+  .searchlinks:hover {
+    cursor: pointer;
+  }
+  
+  .searchlinks:hover h2 {
+    text-decoration: underline;
+  }
+  
+  .arrow {
+    display: inline-block;
+  
+    position: relative;
+    top: 1px;
+    content: " ";
+    border-width: 4px;
+    border-style: solid;
+    border-color: #006621 transparent transparent transparent;
+  }
+  
+  .links {
+    margin-left: 5px;
+  }
+  
+  .linkboxes {
+    position: relative;
+    top: 25px;
+    left: -25px;
+    width: 630px;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 8px;
+  }
+  
+  .paa {
+    color: #808080;
+    font-size: 20px;
+    padding: 15px 16px 10px;
+    font-weight: normal;
+    margin: 0;
+    border-bottom: 1px solid #dfe1e5;
+  }
+  
+  .lblinks {
+    display: table-cell;
+    width: auto;
+    padding: 5px 40px 5px 16px;
+    color: black;
+  }
+  
+  .linkboxes div {
+    display: table;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #dfe1e5;
+  }
+  
+  #lastdivlink {
+    border-bottom: none;
+  }
+  
+  .linkboxes div > div {
+    display: table-cell;
+    width: 24px;
+    height: 34px;
+    line-height: 34px;
+    vertical-align: middle;
+    border: none;
+  }
+  .linkboxes svg {
+    position: relative;
+    float: right;
+    fill: #70757a;
+  }
+  
+  .linkboxes svg:hover {
+    cursor: pointer;
+  }
+  
+  .feedback {
+    position: absolute;
+    right: 0;
+    padding-top: 5px;
+    text-decoration: none;
+    font-style: italic;
+    color: #777;
+  }
+  
+  .feedback:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .postlinkbox {
+    margin-top: 75px;
+  }
+  
+  .postlinkbox > div {
+    padding: 0 0 35px 0;
+  }
+  
+  .relatedsearch1,
+  .relatedsearch2 {
+    position: relative;
+    border: 1px solid #dfe1e5;
+    width: 630px;
+    height: 168px;
+    border-radius: 8px;
+    margin: 20px 0;
+    padding-bottom: 16px;
+  }
+  
+  .relatedsearch1 > p {
+    margin-left: 16px;
+  }
+  
+  .relatedsearch1 a {
+    margin-left: 16px;
+  }
+  
+  .relatedsearch1-imglinks {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .relatedsearch1-imglinks > a {
+    display: inline-block;
+    text-align: center;
+    border: 0;
+    vertical-align: top;
+    cursor: pointer;
+  }
+  
+  .relatedsearch1-imglinks > a div {
+    width: 72px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #1a0dab;
+  }
+  
+  .relatedsearch1-imglinks > a:hover div {
+    text-decoration: underline;
+  }
+  
+  .pp {
+    height: 72px;
+    overflow: hidden;
+  }
+  
+  .relatedsearchtext1 {
+    color: #777;
+    font-size: small;
+    margin-bottom: 3px;
+  }
+  
+  .relatedsearchtext2 {
+    color: #222;
+    font-size: 18px;
+    margin-top: 0;
+  }
+  
+  .rst2 {
+    float: right;
+    text-decoration: none;
+    color: #777777;
+  }
+  
+  .rst2:hover {
+    text-decoration: underline;
+  }
+  
+  .rs2 {
+    margin-bottom: 18px;
+  }
+  
+  .rs2div {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    padding-left: 14px;
+  }
+  
+  .relatedsearch3 {
+    margin-top: 25px;
+  }
+  
+  .relatedsearch3 > div > div {
+    display: inline-block;
+    padding-right: 26px;
+  }
+  
+  .relatedsearch3 a {
+    text-decoration: none;
+  }
+  
+  .relatedsearch3 > p {
+    color: #222;
+    font-size: 18px;
+  }
+  
+  .relatedsearch3 > div > div > p:hover a {
+    text-decoration: underline;
+  }
+  
+  .googlenav > table {
+    margin: 30px auto 30px;
+    border-collapse: collapse;
+  }
+  
+  .googlenav tr {
+    vertical-align: top;
+  }
+  
+  .googlenav td {
+    text-align: center;
+    padding: 0;
+  }
+  
+  .googlenav td > a {
+    color: #4285f4;
+    text-decoration: none;
+  }
+  
+  .googlenav td > a:hover {
+    text-decoration: underline;
+  }
+  
+  .gnavspan {
+    display: block;
+    height: 40px;
+  }
+  
+  .gns0 {
+    background: url(https://www.google.co.il/images/nav_logo242_hr.png) no-repeat;
+    background-position: -24px 0;
+    background-size: 167px;
+    width: 28px;
+  }
+  
+  .gns1 {
+    background: url(https://www.google.co.il/images/nav_logo242_hr.png) no-repeat;
+    background-position: -53px 0;
+    background-size: 167px;
+    width: 20px;
+  }
+  
+  .gns2 {
+    background: url(https://www.google.co.il/images/nav_logo242_hr.png) no-repeat;
+    background-position: -74px 0;
+    background-size: 167px;
+    width: 20px;
+  }
+  
+  .gns3 {
+    background: url(https://www.google.co.il/images/nav_logo242_hr.png) no-repeat;
+    background-position: -96px 0;
+    background-size: 167px;
+    width: 71px;
+  }
+  
